@@ -12,7 +12,7 @@ export RAILS_ENV=development
 ### POSTGRES ###
 # Set the data location of postgres so you don't need it in your start/stop commands:
 # TODO: Remove (now that we use Postgres.app):
-# export PGDATA='/usr/local/var/postgres/'
+export PGDATA='/Users/stephen/Library/Application Support/Postgres/var-9.6/'
 # Add Postgres.app's bin to the path:
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 # Increase the 2 kernel memory management values for postgres from very small, to ok values:
@@ -75,3 +75,8 @@ source ~/bin/git-completion.bash
 
 # rvm needs to be at the bottom of the file in case there are other lines in .[ba|z]shrc that redefine path:
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function into a shell session
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH

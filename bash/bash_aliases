@@ -49,3 +49,4 @@ alias postsizes='echo '\''select t1.datname AS db_name, pg_size_pretty(pg_databa
 alias policeme='git status --porcelain | cut -c4- | grep '\''.rb'\'' | xargs bundle exec rubocop'
 alias servers='cat ~/.ssh/config | grep "Host " | head -n 9'
 alias allservers='cat ~/.ssh/config | grep "Host "'
+alias bluebox='cd ~/workspace/bluebox && rackup -o $(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '"'"'{print $2}'"'"') -p 9494'

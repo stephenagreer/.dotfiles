@@ -23,7 +23,6 @@ alias gl-pretty='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=sh
 alias gb-recent='for ref in $(git for-each-ref --sort=-committerdate --format="%(refname)" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n" | cat ; done | awk '"'! a["'$0'"]++'"
 alias clear-rerere='rm -rf .git/rr-cache'
 alias la='ls -al'
-
 alias unc='OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES bundle exec unicorn -p 3000 -c $HOME/.unicornrc'
 alias unc_applog='{ tail -f log/development.log & OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES bundle exec unicorn -p 3000 -c $HOME/.unicornrc; }'
 alias brs='bundle exec rails s'
@@ -49,4 +48,6 @@ alias postsizes='echo '\''select t1.datname AS db_name, pg_size_pretty(pg_databa
 alias policeme='git status --porcelain | cut -c4- | grep '\''.rb'\'' | xargs bundle exec rubocop'
 alias servers='cat ~/.ssh/config | grep "Host " | head -n 9'
 alias allservers='cat ~/.ssh/config | grep "Host "'
-alias bluebox='cd ~/workspace/bluebox && rackup -o $(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '"'"'{print $2}'"'"') -p 9494'
+alias bb='cd ~/workspace/bluebox && rackup -o $(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '"'"'{print $2}'"'"') -p 9494'
+alias dj='ws && be rake jobs:work'
+alias sm='cd ~/workspace/staticmaps && AGW_STATICMAPS_KEY=devuser AGW_STATICMAPS_SECRET=devsecret API_KEY='"'"'AIzaSyBCHm42FahiVtiU0-Nr2ljTi2pntyzPDz8'"'"' ./node_modules/.bin/nodemon server.js'
